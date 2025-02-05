@@ -7,7 +7,7 @@
 
 #include <iostream>
 #include <fstream>
-#include <vector>
+
 
 /** Number of resources and processes. */
 int resource_count, process_count;
@@ -106,6 +106,7 @@ void computeSafeSequences(std::vector<int> &available, std::vector<std::vector<i
  * @return int Returns 0 on successful execution.
  */
 int main() {
+    
     std::vector<int> total_resources, available;
     std::vector<std::vector<int>> max_needs, allocated;
     std::vector<bool> completed(10, false);
@@ -119,6 +120,8 @@ int main() {
         available[i] = total_resources[i];
         for (int j = 0; j < process_count; j++) {
             available[i] -= allocated[j][i];
+
+            
         }
     }
 
